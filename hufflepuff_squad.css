@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ===== BANNER ===== */
 .huf-squad-banner {
@@ -36,7 +36,6 @@
 .huf-squad-cronologia-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 13px 20px;
   cursor: pointer;
 }
@@ -50,25 +49,10 @@
   color: var(--huf-squad-texto);
   text-transform: uppercase;
 }
-.huf-squad-icono-pluma {
-  width: 14px;
-  height: 14px;
-  stroke: var(--huf-squad-acento);
-  fill: none;
-  stroke-width: 1.4;
-}
-.huf-squad-chevron {
-  width: 12px;
-  height: 12px;
-  stroke: var(--huf-squad-acento);
-  fill: none;
-  stroke-width: 1.8;
-  transition: transform 0.25s ease;
-}
+.huf-squad-icono-pluma { font-size: 14px; color: var(--huf-squad-acento); line-height: 1; }
+.huf-squad-chevron { font-size: 12px; color: var(--huf-squad-acento); line-height: 1; display: inline-block; transition: transform 0.25s ease; }
 .huf-squad-cronologia:hover .huf-squad-chevron,
-.huf-squad-cronologia:focus-within .huf-squad-chevron {
-  transform: rotate(180deg);
-}
+.huf-squad-cronologia:focus-within .huf-squad-chevron { transform: rotate(180deg); }
 
 .huf-squad-cronologia-lista {
   max-height: 0;
@@ -92,20 +76,8 @@
   transition: background 0.15s ease;
 }
 .huf-squad-contenedor .huf-squad-cronologia-item:hover { background: var(--huf-squad-acento-suave); }
-.huf-squad-cronologia-item .huf-squad-pluma-tema {
-  width: 15px;
-  height: 15px;
-  stroke: var(--huf-squad-acento);
-  fill: none;
-  stroke-width: 1.4;
-  flex-shrink: 0;
-  animation: huf-squad-pluma-bounce 1.6s ease-in-out infinite;
-}
-.huf-squad-cronologia-item .huf-squad-pluma-tema.inactivo {
-  animation: none;
-  stroke: var(--huf-squad-texto-secundario);
-  opacity: 0.55;
-}
+.huf-squad-cronologia-item .huf-squad-pluma-tema { font-size: 15px; color: var(--huf-squad-acento); line-height: 1; display: inline-block; flex-shrink: 0; animation: huf-squad-pluma-bounce 1.6s ease-in-out infinite; }
+.huf-squad-cronologia-item .huf-squad-pluma-tema.inactivo { animation: none; color: var(--huf-squad-texto-secundario); opacity: 0.55; }
 @keyframes huf-squad-pluma-bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-5px); }
@@ -115,9 +87,7 @@
 /* ===== DIVISOR ===== */
 .huf-squad-divisor {
   text-align: center;
-  color: var(--huf-squad-acento);
   font-size: 13px;
-  letter-spacing: 4px;
   padding: 14px 0;
   opacity: 0.8;
 }
@@ -139,9 +109,6 @@
 .huf-squad-iconos-divisor {
   display: flex;
   align-items: center;
-  color: var(--huf-squad-acento);
-  font-size: 8px;
-  line-height: 1;
   gap: 5px;
   padding: 2px 0;
 }
@@ -167,23 +134,13 @@
   justify-content: center;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.huf-squad-circulo-icono svg {
-  width: 15px;
-  height: 15px;
-  stroke: var(--huf-squad-acento);
-  fill: none;
-  stroke-width: 1.5;
-}
 
-huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-height: 1; color: var(--huf-squad-acento); display: flex; align-items: center; justify-content: center; }
-.huf-squad-item-icono-v:hover .huf-squad-circulo-icono,
-.huf-squad-item-icono-v:focus-within .huf-squad-circulo-icono {
+.huf-squad-item-icono-v:hover,
+.huf-squad-item-icono-v:focus-within {
   border-color: var(--huf-squad-acento);
   box-shadow: 0 0 8px rgba(236, 185, 57, 0.45);
 }
 
-/* Panel que se abre hacia la IZQUIERDA (el ícono está en el borde izquierdo,
-   el panel crece hacia afuera de la columna de íconos) */
 .huf-squad-panel-icono-v {
   position: absolute;
   top: 0;
@@ -207,13 +164,15 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
 }
 .huf-squad-item-icono-v:hover .huf-squad-panel-icono-v,
 .huf-squad-item-icono-v:focus-within .huf-squad-panel-icono-v {
-  max-width: 220px;
+  max-width: 320px;
   padding: 0 14px;
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-.huf-squad-panel-icono-v .huf-squad-contenido-panel-v {
+.huf-squad-panel-icono-v.huf-squad-contenido-panel-v {
   line-height: 1.3;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .huf-squad-etiqueta-dato-v {
   display: block;
@@ -237,7 +196,6 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
   border: 1px solid var(--huf-squad-borde);
   background: var(--huf-squad-bg-panel);
   border-radius: 8px;
-  padding: 18px 18px 22px 18px;
 }
 .huf-squad-titulo-post {
   position: absolute;
@@ -272,7 +230,6 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
   text-align: justify;
   white-space: pre-line;
 }
-.huf-squad-texto-scroll p { margin: 0 0 16px 0; }
 .huf-squad-texto-scroll b { color: #e6b93c; font-weight: 700; }
 .huf-squad-texto-scroll i { color: #eecf83; font-style: italic; }
 .huf-squad-texto-scroll em {
@@ -281,7 +238,6 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
   padding: 0 4px;
   border-radius: 2px;
 }
-.huf-squad-texto-scroll p:last-child { margin-bottom: 0; }
 
 /* ===== PERSONAJES ===== */
 .huf-squad-seccion-personajes {
@@ -345,7 +301,6 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
   --huf-squad-acento-suave: rgba(236, 185, 57, 0.15);
   --huf-squad-texto: #f2e7c8;
   --huf-squad-texto-secundario: #b3a67f;
-  --huf-squad-rojo: #a3926a;
 
   max-width: 540px;
   margin: 0 auto;
@@ -361,6 +316,11 @@ huf-squad-circulo-icono i { width: 16px; height: 16px; font-size: 13px; line-hei
 .huf-squad-contenedor ::-webkit-scrollbar-thumb { background: var(--huf-squad-acento); border-radius: 4px; border: 2px solid var(--huf-squad-bg-panel); }
 .huf-squad-contenedor * { scrollbar-width: thin; scrollbar-color: var(--huf-squad-acento) var(--huf-squad-bg-panel); }
 
+/* ===== CRÉDITOS ===== */
+.huf-squad-contenedor a {
+  color: var(--huf-squad-acento);
+  text-decoration: none;
+}
 .huf-squad-credits {
   text-align: center;
   margin-top: 22px;

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
-body{ background:#161310; margin:0; padding:30px 20px; }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ===== CONTENEDOR BASE ===== */
 .huf-ficha-contenedor {
@@ -11,7 +9,6 @@ body{ background:#161310; margin:0; padding:30px 20px; }
   --huf-ficha-acento-suave: rgba(236, 185, 57, 0.15);
   --huf-ficha-texto: #f2e7c8;
   --huf-ficha-texto-secundario: #b3a67f;
-  --huf-ficha-rojo: #a3926a;
 
   max-width: 540px;
   margin: 0 auto;
@@ -36,7 +33,6 @@ body{ background:#161310; margin:0; padding:30px 20px; }
   display: block;
   filter: saturate(0.65) brightness(0.72) contrast(1.0) sepia(0.4);
 }
-
 .huf-ficha-faceclaim {
   position: absolute;
   left: 16px;
@@ -82,10 +78,6 @@ body{ background:#161310; margin:0; padding:30px 20px; }
   text-transform: none;
 }
 
-/* ===== TABLILLA POST (caja principal + sidebar iconos) ===== */
-
-
-
 /* ===== NAV (botones) ===== */
 .huf-tab-radio { display: none; }
 .huf-ficha-nav {
@@ -110,13 +102,6 @@ body{ background:#161310; margin:0; padding:30px 20px; }
   text-transform: uppercase;
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-.huf-ficha-tab svg {
-  width: 13px;
-  height: 13px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.5;
 }
 .huf-ficha-tab:hover {
   border-color: var(--huf-ficha-acento);
@@ -150,14 +135,6 @@ body{ background:#161310; margin:0; padding:30px 20px; }
   border-radius: 6px;
   text-align: center;
 }
-.huf-ficha-dato svg {
-  width: 13px;
-  height: 13px;
-  stroke: rgba(236, 185, 57, 0.55);
-  fill: none;
-  stroke-width: 1.3;
-  display: block;
-}
 .huf-ficha-dato-valor {
   font-family: 'Cormorant Garamond', serif;
   font-size: 10.5px;
@@ -179,6 +156,8 @@ body{ background:#161310; margin:0; padding:30px 20px; }
 #huf-tab-historia:checked ~ .huf-page-historia,
 #huf-tab-cronologia:checked ~ .huf-page-cronologia,
 #huf-tab-relaciones:checked ~ .huf-page-relaciones { display: block; }
+/* Si el foro quitara las pestañas, se muestran todas las secciones */
+.huf-ficha-contenedor:not(:has(.huf-tab-radio:checked)) .huf-ficha-page { display: block; }
 
 .huf-ficha-titulo-seccion {
   text-align: center;
